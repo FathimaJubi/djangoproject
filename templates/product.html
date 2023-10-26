@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            font-family: Arial;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <form action="{% url 'product' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label>Product name</label><br>
+        <input type="text" name="pname"><br>
+        <label>product price</label><br>
+        <input type="number" name="pprice"><br>
+        <label>product description</label><br>
+        <input type="text" name="pdisc"><br>
+        <label>Image</label><br>
+        <input type="file" name="image"><br><br>
+        <input type="submit">
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            font-family: Arial;
+            background: linear-gradient(to top,rgba(81, 63, 63, 0.5),rgba(159, 28, 28, 0.5));
+           
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form action="{% url 'register' %}" method="POST">
+        {% csrf_token %}
+        <label>FIRST NAME:</label><br><br>
+        <input type="text" name="fname"><br><br>
+        <label>LAST NAME:</label><br><br>
+        <input type="text" name="lname"><br><br>
+        <label>USER NAME:</label><br><br>
+        <input type="text" name="usname"><br><br>
+        <label>DATE OF BIRTH :</label><br><br>
+        <input type="date" name="age"><br><br>
+        <label>ADRESS</label><br><br>
+        <textarea type="text" name="adress"></textarea><br><br>
+        <label>MOBILE NO:</label><br><br>
+        <input type="number" name="phone"><br><br>    
+        <label>Email :</label><br><br>
+        <input type="email"  name="names"><br><br>
+        <label>SELECT GENDER :</label><br><br>
+        <label for="male">MALE</label>
+        <input id='male' type="radio" name="gender" value="male">
+        <label for="female">FEMALE</label>
+        <input id="female" type="radio" name="gender" value="female">
+        <label for="other">OTHER</label>
+        <input id=other type="radio" name="gender" value="other"><br><br>
+        <label>SELECT DISTRICT:</label><br><br>
+        <select name="district">
+            <option>Malappuram</option>
+            <option>Palakkad</option>
+            <option>Ernakulam</option>
+            <option>Kozhikode</option>
+            <option>Thrissur</option>
+        </select><br><br>
+        <label>PASSWORD:</label><br><br>
+        <input type="password" name="password"><br><br>
+        <label>CONFIRM PASSWORD:</label><br><br>
+        <input type="password" name="cpassword"><br><br>
+
+        <input type="submit">
+
+
+    </form>
+</body>
+</html>

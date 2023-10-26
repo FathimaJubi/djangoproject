@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>welcome to cart</h1>
+    {% for c in cart_items %}
+    <div class="cart-itmes">
+        <div class="image-box">
+            <img src="{{ c.item.pro_image.url }}" height="200px">
+
+        </div>
+        <div class="about">
+            <h1 class="title">{{c.item.pro_name}}</h1>
+            <h3 class="title">{{c.item.pro_description}}</h3>
+
+        </div>
+        <div class="counter">
+            <div class="btn">+</div>
+            <div class="count">{{c.quantity}}</div>
+            <div class="btn">-</div>
+        </div>
+        <div class="price">
+            <div class="amount">{{c.item.pro_price}}</div>
+            <div class="save"><u>save for later</u></div>
+            <div class="remove"><button><a href="{% url 'rmv' c.id %}">remove</a></button></div>
+        </div>
+        
+    </div>
+    
+    {% endfor %}
+    <button><a href="{% url 'remove' %}">remove all</a></button>
+</body>
+</html>
